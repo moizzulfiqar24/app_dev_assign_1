@@ -5,36 +5,51 @@ class MyStatsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Material(
-        borderRadius: BorderRadius.circular(20),
-        elevation: 10,
-        child: ListTile(
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.asset(
-              'assets/images/conf.jpg',
-              width: 89,
-              height: 77,
-              fit: BoxFit.cover,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Column(
+          children: const [
+            Text(
+              '19',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFF77F00), // Orange color
+              ),
             ),
-          ),
-          title: Text(
-            'Hah',
-            style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
-          ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('30 November 2024, 9:00 AM'),
-              Text('13th Street, Park Avenue'),
-              Text('John Doe'),
-            ],
-          ),
+            SizedBox(height: 3),
+            Text(
+              'Posts',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
-      ),
+        const SizedBox(width: 100), // Space between the two columns
+        Column(
+          children: const [
+            Text(
+              '32',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFF77F00), // Orange color
+              ),
+            ),
+            SizedBox(height: 3),
+            Text(
+              'Comments',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

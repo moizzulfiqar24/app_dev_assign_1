@@ -335,7 +335,9 @@ class _ProfilePageState extends State<ProfilePage> {
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.45,
               child: ListView.builder(
-                itemCount: selectedIndex == 1 ? comments.length : events.length,
+                itemCount: selectedIndex == 2
+                    ? 1
+                    : (selectedIndex == 1 ? comments.length : events.length),
                 itemBuilder: (context, index) {
                   if (selectedIndex == 0) {
                     final event = events[index];
