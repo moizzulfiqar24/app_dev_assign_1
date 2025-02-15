@@ -185,7 +185,7 @@ import 'package:app_dev_assign_1/widgets/custom_appbar.dart';
 import 'package:app_dev_assign_1/widgets/event_tile.dart';
 import 'package:app_dev_assign_1/widgets/stat_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -199,7 +199,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.robotoTextTheme(),
+        fontFamily: 'Roboto', // Set Roboto as the default font
       ),
       home: ProfilePage(),
     );

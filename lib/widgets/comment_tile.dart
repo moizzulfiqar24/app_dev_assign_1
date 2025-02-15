@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyCommentsTile extends StatelessWidget {
   final String eventName;
@@ -34,7 +35,7 @@ class MyCommentsTile extends StatelessWidget {
                   Text(
                     eventName,
                     style: const TextStyle(
-                      fontSize: 15,
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
@@ -43,20 +44,40 @@ class MyCommentsTile extends StatelessWidget {
                   const SizedBox(height: 5),
 
                   // Row containing left-up arrow and comment
+                  // Row(
+                  //   children: [
+                  //     const Icon(
+                  //       Icons.turn_right, // This is the left-up curved arrow
+                  //       size: 18,
+                  //       color: Colors.grey,
+                  //     ),
+                  //     const SizedBox(width: 5),
+                  //     Expanded(
+                  //       child: Text(
+                  //         '"$comment"',
+                  //         style: const TextStyle(
+                  //           fontSize: 14,
+                  //           color: Color(0xFF929292),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   Row(
                     children: [
-                      const Icon(
-                        Icons
-                            .arrow_upward_outlined, // This is the left-up curved arrow
-                        size: 18,
-                        color: Colors.grey,
+                      SvgPicture.asset(
+                        'assets/icons/bold_left_up_arrow.svg', // Path to your SVG file
+                        width: 18, // Set the size
+                        height: 18,
+                        colorFilter: const ColorFilter.mode(Colors.grey,
+                            BlendMode.srcIn), // Change color if needed
                       ),
                       const SizedBox(width: 5),
                       Expanded(
                         child: Text(
                           '"$comment"',
                           style: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 16,
                             color: Color(0xFF929292),
                           ),
                         ),
@@ -70,7 +91,7 @@ class MyCommentsTile extends StatelessWidget {
                   Text(
                     eventDate,
                     style: const TextStyle(
-                      fontSize: 13,
+                      fontSize: 15,
                       color: Color(0xFF929292),
                     ),
                   ),

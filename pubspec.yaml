@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -21,5 +21,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/icons/bold_left_up_arrow.svg
 
-  
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-VariableFont_wdth,wght.ttf
+        - asset: assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf
+          style: italic
