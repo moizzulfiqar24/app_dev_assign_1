@@ -30,17 +30,42 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   int selectedIndex = 0; // 0 = Posts, 1 = Comments, 2 = Stats
 
+  // Event Data List (NEWLY ADDED)
+  final List<Map<String, String>> events = [
+    {
+      'eventName': 'Tech Conference',
+      'eventDate': '30 November 2024, 9:00 AM',
+      'eventAddress': '13th Street, Park Avenue',
+      'eventPerson': 'John Doe',
+      'imagePath': 'assets/images/conf.jpg',
+    },
+    {
+      'eventName': 'Music Festival',
+      'eventDate': '15 December 2024, 6:00 PM',
+      'eventAddress': 'Sunset Arena, LA',
+      'eventPerson': 'DJ Alex',
+      'imagePath': 'assets/images/conf.jpg',
+    },
+    {
+      'eventName': 'Business Meetup',
+      'eventDate': '20 January 2025, 3:00 PM',
+      'eventAddress': 'Downtown Business Hub',
+      'eventPerson': 'Sarah Lee',
+      'imagePath': 'assets/images/conf.jpg',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          // Custom AppBar (Kept as per your original code)
+          // Custom AppBar (No changes)
           AppBar(
             shape: CustomAppBarShape(),
           ),
 
-          // Profile Section (Kept as per your original code)
+          // Profile Section (No changes)
           Container(
             height: 52 * 2.0 * 0.85,
           ),
@@ -79,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           const SizedBox(height: 30),
 
-          // Selection Tab (Above MyEventTile)
+          // Selection Tab (No changes)
           Column(
             children: [
               Row(
@@ -100,21 +125,28 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           const SizedBox(height: 10),
 
-          // Section Content (MyEventTile for all sections, replace as needed)
+          // Section Content (MyEventTile now dynamically displays events)
           Expanded(
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.45,
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: events.length,
                 itemBuilder: (context, index) {
+                  final event = events[index]; // Fetch event data
                   return Column(
                     children: [
                       if (selectedIndex == 0)
-                        MyEventTile() // Replace for Posts
+                        MyEventTile(
+                          eventName: event['eventName']!,
+                          eventDate: event['eventDate']!,
+                          eventAddress: event['eventAddress']!,
+                          eventPerson: event['eventPerson']!,
+                          imagePath: event['imagePath']!,
+                        )
                       else if (selectedIndex == 1)
-                        MyCommentsTile() // Replace for Comments
+                        MyCommentsTile() // No changes
                       else
-                        MyStatsTile(), // Replace for Stats
+                        MyStatsTile(), // No changes
                       const SizedBox(height: 20),
                     ],
                   );
@@ -127,6 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+  // Tab Button Builder (No changes)
   Widget _buildTabButton(String title, int index) {
     bool isSelected = selectedIndex == index;
     return GestureDetector(

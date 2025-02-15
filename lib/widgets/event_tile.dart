@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyEventTile extends StatelessWidget {
-  const MyEventTile({super.key});
+  final String eventName;
+  final String eventDate;
+  final String eventAddress;
+  final String eventPerson;
+  final String imagePath;
+
+  const MyEventTile({
+    super.key,
+    required this.eventName,
+    required this.eventDate,
+    required this.eventAddress,
+    required this.eventPerson,
+    this.imagePath = 'assets/images/conf.jpg', // Default image
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -10,29 +23,35 @@ class MyEventTile extends StatelessWidget {
       child: Material(
         borderRadius: BorderRadius.circular(20),
         elevation: 10,
-        child: ListTile(
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.asset(
-              'assets/images/conf.jpg',
-              width: 89,
-              height: 77,
-              fit: BoxFit.cover,
+        child: Column(
+          children: [
+            ListTile(
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.asset(
+                  imagePath,
+                  width: 89,
+                  height: 77,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              title: Text(
+                eventName,
+                style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black),
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(eventDate),
+                  Text(eventAddress),
+                  Text(eventPerson),
+                ],
+              ),
             ),
-          ),
-          title: Text(
-            'Event Name',
-            style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
-          ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('30 November 2024, 9:00 AM'),
-              Text('13th Street, Park Avenue'),
-              Text('John Doe'),
-            ],
-          ),
+          ],
         ),
       ),
     );
