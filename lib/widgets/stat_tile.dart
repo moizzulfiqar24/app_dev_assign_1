@@ -14,7 +14,7 @@ class MyStatsTile extends StatelessWidget {
               '19',
               style: TextStyle(
                 fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
                 color: Color(0xFFF77F00), // Orange color
               ),
             ),
@@ -35,7 +35,7 @@ class MyStatsTile extends StatelessWidget {
               '32',
               style: TextStyle(
                 fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
                 color: Color(0xFFF77F00), // Orange color
               ),
             ),

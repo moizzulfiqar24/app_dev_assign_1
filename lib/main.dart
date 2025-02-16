@@ -3,7 +3,7 @@ import 'package:app_dev_assign_1/widgets/custom_appbar.dart';
 import 'package:app_dev_assign_1/widgets/event_tile.dart';
 import 'package:app_dev_assign_1/widgets/stat_tile.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // theme: ThemeData(
+      //   fontFamily: 'Roboto',
+      // ),
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        textTheme: GoogleFonts.robotoTextTheme(),
       ),
       home: ProfilePage(),
     );

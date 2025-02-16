@@ -13,7 +13,7 @@ class MyEventTile extends StatelessWidget {
     required this.eventDate,
     required this.eventAddress,
     required this.eventPerson,
-    this.imagePath = 'assets/images/conf.jpg', // Default image
+    this.imagePath = 'assets/images/conf.jpg', 
   });
 
   @override
