@@ -272,7 +272,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
           // Profile Section
           Container(
-            height: 52 * 2.0 * 0.85,
+            height: 52 * 2.0 * 0.75,
           ),
           CircleAvatar(
             radius: 60,
