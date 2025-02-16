@@ -15,7 +15,7 @@ class MyStatsTile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
-                color: Color(0xFFF77F00), // Orange color
+                color: Color(0xFFF77F00),
               ),
             ),
             SizedBox(height: 3),
@@ -28,7 +28,7 @@ class MyStatsTile extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(width: 100), // Space between the two columns
+        const SizedBox(width: 100),
         Column(
           children: const [
             Text(
@@ -36,7 +36,7 @@ class MyStatsTile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
-                color: Color(0xFFF77F00), // Orange color
+                color: Color(0xFFF77F00),
               ),
             ),
             SizedBox(height: 3),

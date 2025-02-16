@@ -41,23 +41,23 @@ class _ProfilePageState extends State<ProfilePage> {
   final List<Map<String, String>> events = [
     {
       'eventName': 'Tech Conference',
-      'eventDate': '10 Feb 2024, 9:00 PM',
-      'eventAddress': 'Clifton, Karachi',
+      'eventDate': '30 November 2024, 9:00 AM',
+      'eventAddress': '13th Street, Park Avenue',
       'eventPerson': 'John Doe',
       'imagePath': 'assets/images/conf.jpg',
     },
     {
-      'eventName': 'Tech Meetup',
-      'eventDate': '10 Feb 2024, 9:00 PM',
-      'eventAddress': 'DHA, Lahore',
-      'eventPerson': 'Moiz',
+      'eventName': 'Leadership Seminar',
+      'eventDate': '28 Jan 2025, 2:00 PM',
+      'eventAddress': '13th Street, Park Avenue',
+      'eventPerson': 'John Doe',
       'imagePath': 'assets/images/conf.jpg',
     },
     {
-      'eventName': 'Tech Competition',
-      'eventDate': '10 Feb 2024, 9:00 PM',
-      'eventAddress': 'Gulshan, Karachi',
-      'eventPerson': 'Zulfiqar',
+      'eventName': 'Entrepreneurship Summit',
+      'eventDate': '15 March 2025, 10:00 AM',
+      'eventAddress': '13th Street, Park Avenue',
+      'eventPerson': 'John Doe',
       'imagePath': 'assets/images/conf.jpg',
     },
   ];
@@ -67,17 +67,17 @@ class _ProfilePageState extends State<ProfilePage> {
     {
       'eventName': 'Flutter Flash',
       'comment': 'Looks like an amazing event!',
-      'eventDate': '10 Feb 2024, 9:00 PM',
+      'eventDate': '30 November 2024, 11:00 PM',
     },
     {
-      'eventName': 'Tech Summit',
-      'comment': 'Amazing event!',
-      'eventDate': '10 Feb 2024, 9:00 PM',
+      'eventName': 'Bob’s annual BBQ',
+      'comment': 'Wish I could’ve been there:(',
+      'eventDate': '2 August 2024, 10:31 PM',
     },
     {
-      'eventName': 'Tech Competition',
-      'comment': 'Great event!',
-      'eventDate': '10 Feb 2024, 9:00 PM',
+      'eventName': 'Networking Lounge',
+      'comment': 'Will the event be starting on time?',
+      'eventDate': '25 June 2023, 12:00 AM',
     },
   ];
 
@@ -148,7 +148,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ],
           ),
-          // const SizedBox(height: 10),
 
           // Main Content
           Expanded(

@@ -36,9 +36,7 @@ class MyCommentsTile extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-
                   const SizedBox(height: 3),
-
                   Row(
                     children: [
                       CustomPaint(
@@ -50,17 +48,14 @@ class MyCommentsTile extends StatelessWidget {
                         child: Text(
                           '"$comment"',
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14.5,
                             color: Color(0xFF929292),
                           ),
                         ),
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 5),
-
-                  // Event Date
                   Text(
                     eventDate,
                     style: const TextStyle(
@@ -80,7 +75,6 @@ class MyCommentsTile extends StatelessWidget {
   }
 }
 
-// Custom Painter for Arrow
 class BoldCurvedLeftUpArrowPainter extends CustomPainter {
   final Color color;
 
