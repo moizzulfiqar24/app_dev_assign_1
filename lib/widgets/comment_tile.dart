@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MyCommentsTile extends StatelessWidget {
   final String eventName;
@@ -20,8 +19,6 @@ class MyCommentsTile extends StatelessWidget {
       child: Column(
         children: [
           Material(
-            // borderRadius: BorderRadius.circular(10),
-            // elevation: 2,
             child: Padding(
               padding: const EdgeInsets.only(
                 left: 41,
@@ -31,7 +28,6 @@ class MyCommentsTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Event Title
                   Text(
                     eventName,
                     style: const TextStyle(
@@ -41,38 +37,15 @@ class MyCommentsTile extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 3),
 
-                  // Row containing left-up arrow and comment
-                  // Row(
-                  //   children: [
-                  //     const Icon(
-                  //       Icons.turn_right, // This is the left-up curved arrow
-                  //       size: 18,
-                  //       color: Colors.grey,
-                  //     ),
-                  //     const SizedBox(width: 5),
-                  //     Expanded(
-                  //       child: Text(
-                  //         '"$comment"',
-                  //         style: const TextStyle(
-                  //           fontSize: 14,
-                  //           color: Color(0xFF929292),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                   Row(
                     children: [
-                      SvgPicture.asset(
-                        'assets/icons/bold_left_up_arrow.svg', // Path to your SVG file
-                        width: 18, // Set the size
-                        height: 18,
-                        colorFilter: const ColorFilter.mode(Colors.grey,
-                            BlendMode.srcIn), // Change color if needed
+                      CustomPaint(
+                        size: const Size(17, 18),
+                        painter: BoldCurvedLeftUpArrowPainter(Colors.grey),
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: 3),
                       Expanded(
                         child: Text(
                           '"$comment"',
@@ -100,9 +73,39 @@ class MyCommentsTile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          const Divider(color: Colors.grey), // Line under the tile
+          const Divider(color: Colors.grey),
         ],
       ),
     );
   }
+}
+
+// Custom Painter for Arrow
+class BoldCurvedLeftUpArrowPainter extends CustomPainter {
+  final Color color;
+
+  BoldCurvedLeftUpArrowPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = color
+      ..strokeWidth = 3.5
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+
+    final Path path = Path();
+
+    path.moveTo(size.width - 4, size.height);
+    path.lineTo(7, size.height);
+    path.quadraticBezierTo(-size.width * 0.1, size.height, 0, 0);
+    path.moveTo(0, 0);
+    path.lineTo(-size.width * 0.3, size.height * 0.3);
+    path.moveTo(0, 0);
+    path.lineTo(size.width * 0.3, size.height * 0.3);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
